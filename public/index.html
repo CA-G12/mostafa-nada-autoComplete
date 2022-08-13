@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<form>
- <input class="movietype" type="text">
-</form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./public/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Anonime</h1>
+        <ul>
+          <li>Home</li>
+          <li>List anime</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="intro">
+        <div id="img-container">
+          <img src="./public/image/spy_carousel.png" alt="bg" />
+        </div>
+        <div id="title-desc">
+          <h2>Spy X Family</h2>
+          <p>
+            Corrupt politicians, frenzied nationalists, and other warmongering
+            forces constantly jeopardize the thin veneer of peace between
+            neighboring countries Ostania and Westalis.
+          </p>
+        </div>
+      </section>
+
+      <section id="search">
+        <h2>Explore</h2>
+        <p>What are you gonna watch today ?</p>
+        <input
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Search anime or movie..."
+        />
+
+        <div class="suggestion-container">
+          <p>The Flash</p>
+          <p>Helix</p>
+          <p>Penny Dreadful</p>
+          <p>Constantine</p>
+          <p>Continuum</p>
+          <p>Lost Girl</p>
+          <p>Gotham</p>
+          <p>Grimm"</p>
+          <p>Marvel's Agents of S.H.I.E.L.D.</p>
+          <p>Homeland</p>
+          <p>The 100</p>
+          <p>True Detective</p>
+          <p>Arrow</p>
+          <p>Bitten</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./public/script.js"></script>
+  </body>
 </html>
