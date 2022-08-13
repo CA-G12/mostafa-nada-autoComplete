@@ -4,7 +4,8 @@
   "description": "",
   "main": "test.test.js",
   "scripts": {
-   "start":"node ./src/server.js"
+   "start":"node ./src/server.js",
+   "dev":"nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
