@@ -53,7 +53,7 @@ function showDetails() {
         image.src = data.image.medium;
         Name.textContent = data.name;
         summary.textContent = data.summary;
-        rating.textContent = data.rating;
+        rating.textContent = data.rating.average;
       });
     });
   });
