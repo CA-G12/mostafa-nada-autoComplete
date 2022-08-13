@@ -4,8 +4,7 @@
   "description": "",
   "main": "test.test.js",
   "scripts": {
-   "start":"node ./src/server.js",
-   
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +16,7 @@
     "url": "https://github.com/CA-G12/mostafa-nada-autoComplete/issues"
   },
   "homepage": "https://github.com/CA-G12/mostafa-nada-autoComplete#readme",
-  "dependencies": {
-   
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^28.1.3",
     "supertest": "^6.2.4",
