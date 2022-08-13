@@ -1,10 +1,10 @@
 /* eslint-disable no-use-before-define */
 /* eslint linebreak-style: ["error", "windows"] */
-const input = document.querySelector('.search-input');
-const image = document.querySelector('.picture');
-const Name = document.querySelector('.name');
-const summary = document.querySelector('.summary');
-const rating = document.querySelector('.rating');
+const input = document.querySelector(".search-input");
+const image = document.querySelector(".picture");
+const Name = document.querySelector(".name");
+const summary = document.querySelector(".summary");
+const rating = document.querySelector(".rating");
 
 function fetchData(url, cb) {
   const xhr = new XMLHttpRequest();
@@ -16,16 +16,16 @@ function fetchData(url, cb) {
       }
     }
   };
-  xhr.open('GET', url, true);
+  xhr.open("GET", url, true);
   xhr.send();
 }
 
-input.addEventListener('input', () => {
-  if (input.value === '') {
+input.addEventListener("input", () => {
+  if (input.value === "") {
     const container = document.getElementsByClassName(
-      'suggestion-container',
+      "suggestion-container"
     )[0];
-    container.textContent = '';
+    container.textContent = "";
   } else {
     fetchData(`/displaymovies/${input.value}`, (data) => {
       renderAutoComplite(data);
@@ -34,27 +34,33 @@ input.addEventListener('input', () => {
 });
 
 function renderAutoComplite(data) {
-  const container = document.getElementsByClassName('suggestion-container')[0];
-  container.textContent = '';
+  const container = document.getElementsByClassName("suggestion-container")[0];
+  container.textContent = "";
   data.forEach((element) => {
-    const para = document.createElement('p');
+    const para = document.createElement("p");
     para.textContent = element;
     container.appendChild(para);
   });
 }
 
 function showDetails() {
-  const choices = document.querySelectorAll('.suggestion-container p');
+  const choices = document.querySelectorAll(".suggestion-container p");
 
   choices.forEach((element) => {
-    element.addEventListener('click', () => {
+    element.addEventListener("click", () => {
+      const detailsSection = document.querySelector("#details");
+      detailsSection.style.display='block'
       const content = element.textContent;
-      fetchData(`https://api.tvmaze.com/singlesearch/shows?q=${content}`, (data) => {
-        image.src = data.image.medium;
-        Name.textContent = data.name;
-        summary.textContent = data.summary;
-        rating.textContent = data.rating.average;
-      });
+      fetchData(
+        `https://api.tvmaze.com/singlesearch/shows?q=${content}`,
+        (data) => {
+          console.log(data)
+          image.src = data.image.original;
+          Name.textContent =   data.name;
+          summary.innerHTML = `summary: ${data.summary}`;
+          rating.textContent = `rating: ${data.rating.average}` 
+        }
+      );
     });
   });
 }
